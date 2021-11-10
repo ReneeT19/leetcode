@@ -24,7 +24,7 @@ Output: [0,1]
 public class twoSum {
 
     public static void main(String[] args) {
-        Solution ob = new Solution();
+        getTwoSum ob = new getTwoSum();
         int[] nums = {2,7,11,15};
         int[] nums2 = {3,2,4};
         int[] nums3 = {3,3};
@@ -34,7 +34,7 @@ public class twoSum {
     }
 }
 
-class Solution {
+class getTwoSum {
 
     public int[] twoSum(int[] nums, int target) {
 //        int[] outcome = new int[2];   //if need to return values instead of index
