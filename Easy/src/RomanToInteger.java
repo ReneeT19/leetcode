@@ -5,53 +5,22 @@ public class RomanToInteger {
         System.out.println(ob.romanToInt("IV"));
     }
 
+    //Java allows a class to be defined within another class. These are called Nested Classes using static keyword
     static class convertRomanToInteger {
         public int romanToInt(String s) {
-            int outcome = 0;
-            for(int i = 0; i < s.length()-1; i++) {
-                if(getRomanNumeralsValue(s.charAt(i)) == getRomanNumeralsValue(s.charAt(i+1))) {
-                    outcome = getRomanNumeralsValue(s.charAt(i))*s.length();
-                } else if (getRomanNumeralsValue(s.charAt(i)) < getRomanNumeralsValue(s.charAt(i+1))) {
-                    outcome = getRomanNumeralsValue(s.charAt(i+1))-getRomanNumeralsValue(s.charAt(i));
-                } else if(getRomanNumeralsValue(s.charAt(i)) > getRomanNumeralsValue(s.charAt(i+1))) {
-                    outcome = 0;
+            int[] map = new int[256];
+            map['I'] = 1; map['V'] = 5; map['X'] = 10; map['L'] = 50; map['C'] = 100; map['D'] = 500; map['M'] = 1000;
+
+            int ret = 0, pre = 1;
+            for (int i = s.length()-1; i >= 0; --i) {
+                int cur = map[s.charAt(i)];
+                if (cur < pre) ret -= cur;
+                else {
+                    pre = cur;
+                    ret += cur;
                 }
             }
-            return outcome;
+            return ret;
         }
-}
-
-
-
-    public static int getRomanNumeralsValue(char ch) {
-        int value = 0;
-        switch(ch) {
-            case 'M':
-                value = 1000;
-                break;
-            case 'D':
-                value = 500;
-                break;
-            case 'C':
-                value = 100;
-                break;
-            case 'L':
-                value = 50;
-                break;
-            case 'X':
-                value = 10;
-                break;
-            case 'V':
-                value = 5;
-                break;
-            case 'I':
-                value = 1;
-                break;
-            default:
-                value = 0;
-                break;
-        }
-        return value;
     }
-
 }
