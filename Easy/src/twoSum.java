@@ -32,26 +32,26 @@ public class twoSum {
         System.out.println(Arrays.toString(ob.twoSum(nums2,6)));
         System.out.println(Arrays.toString(ob.twoSum(nums3,6)));
     }
-}
 
-class getTwoSum {
+    static class getTwoSum {
 
-    public int[] twoSum(int[] nums, int target) {
+        public int[] twoSum(int[] nums, int target) {
 //        int[] outcome = new int[2];   //if need to return values instead of index
-        int[] index = new int[2];
-        for(int i = 0; i < nums.length; i++) {
-            for(int j = i+1; j < nums.length; j++) {
-                if(nums[i] + nums[j] == target) {
+            int[] index = new int[2];
+            for(int i = 0; i < nums.length; i++) {
+                for(int j = i+1; j < nums.length; j++) {
+                    if(nums[i] + nums[j] == target) {
 //                    outcome[0] = nums[i];
 //                    outcome[1] = nums[j];
-                    index[0] = i;
-                    index[1] = j;
-                    return index;
+                        index[0] = i;
+                        index[1] = j;
+                        return index;
 //                    return outcome;
+                    }
                 }
             }
+            return null;
         }
-    return null;
     }
 }
 
