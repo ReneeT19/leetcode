@@ -4,24 +4,26 @@ public class RomanToInteger {
         System.out.println(ob.romanToInt("III"));
         System.out.println(ob.romanToInt("IV"));
     }
+
+    static class convertRomanToInteger {
+        public int romanToInt(String s) {
+            int outcome = 0;
+            for(int i = 0; i < s.length()-1; i++) {
+                if(getRomanNumeralsValue(s.charAt(i)) == getRomanNumeralsValue(s.charAt(i+1))) {
+                    outcome = getRomanNumeralsValue(s.charAt(i))*s.length();
+                } else if (getRomanNumeralsValue(s.charAt(i)) < getRomanNumeralsValue(s.charAt(i+1))) {
+                    outcome = getRomanNumeralsValue(s.charAt(i+1))-getRomanNumeralsValue(s.charAt(i));
+                } else if(getRomanNumeralsValue(s.charAt(i)) > getRomanNumeralsValue(s.charAt(i+1))) {
+                    outcome = 0;
+                }
+            }
+            return outcome;
+        }
 }
 
-class convertRomanToInteger {
-    public int romanToInt(String s) {
-        int outcome = 0;
-        for(int i = 0; i < s.length()-1; i++) {
-            if(getRomanNumeralsValue(s.charAt(i)) == getRomanNumeralsValue(s.charAt(i+1))) {
-                outcome = getRomanNumeralsValue(s.charAt(i))*s.length();
-            } else if (getRomanNumeralsValue(s.charAt(i)) < getRomanNumeralsValue(s.charAt(i+1))) {
-                outcome = getRomanNumeralsValue(s.charAt(i+1))-getRomanNumeralsValue(s.charAt(i));
-            } else if(getRomanNumeralsValue(s.charAt(i)) > getRomanNumeralsValue(s.charAt(i+1))) {
-                outcome = 0;
-            }
-        }
-        return outcome;
-    }
 
-    public int getRomanNumeralsValue(char ch) {
+
+    public static int getRomanNumeralsValue(char ch) {
         int value = 0;
         switch(ch) {
             case 'M':
