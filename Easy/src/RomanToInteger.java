@@ -4,12 +4,6 @@ public class RomanToInteger {
         System.out.println(ob.romanToInt("III"));
         System.out.println(ob.romanToInt("IV"));
         System.out.println(ob.romanToInt("MCMXCIV"));
-        for(int i=10; i>=0; --i){
-            System.out.print(i);
-        }
-        for(int i=10; i>=0; i--){
-            System.out.print(i);
-        }
     }
 
     //Java allows a class to be defined within another class. These are called Nested Classes using static keyword
