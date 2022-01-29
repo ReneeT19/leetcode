@@ -7,6 +7,7 @@ public class ValidParentheses {
         isValid("(]");
     }
 
+    //use Stack (Java collection - LIFO: push,pop,empty,search,peek)
     public static boolean isValid(String s) {
         int i = 0;
         while (i < s.length()) {
