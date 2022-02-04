@@ -2,7 +2,7 @@ public class MergeTwoSortedLists {
     public static void main(String[] args) {
 
     }
-    
+
     // Definition for singly-linked list.
     public class ListNode {
         int val;
