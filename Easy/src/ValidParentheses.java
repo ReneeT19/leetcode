@@ -26,6 +26,7 @@ public class ValidParentheses {
                 characterStack.push(']');
             //| does not do short-circuit evaluation in boolean expressions.
             //|| will stop evaluating if the first operand is true
+            //check null or empty first before checking other conditions
             } else if(characterStack.isEmpty() || ch != characterStack.pop()) {
                 return false;
             }
