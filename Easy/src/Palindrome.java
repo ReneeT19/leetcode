@@ -17,9 +17,9 @@ import java.util.Arrays;
 public class Palindrome {
     public static void main(String[] args) {
         getPalindrome ob = new getPalindrome();
-        System.out.println(ob.isPalindrome(121));
-        System.out.println(ob.isPalindrome(-121));
-        System.out.println(ob.isPalindrome(1000021));
+        System.out.println(ob.isPalindrome(22022022));
+//        System.out.println(ob.isPalindrome(-121));
+//        System.out.println(ob.isPalindrome(1000021));
     }
 }
 
